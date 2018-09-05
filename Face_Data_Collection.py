@@ -32,7 +32,7 @@ while True:
     gray = cv2.cvtColor(frame , cv2.COLOR_BGR2GRAY)
 
     #there may be possibility that more than one person are in front of the camera so we will detect multiple faces
-    faces = face_cascade.detectMultiScale(gray , 1.3 ,5)#???????????????????????????
+    faces = face_cascade.detectMultiScale(gray , 1.3 ,5)
     k = 1
     #faces = (x,y,w,h)
 
@@ -72,15 +72,15 @@ while True:
 
 
     	#display face ROI
-    	cv2.imshow(str(k) , face_section)#??????????????????????
+    	cv2.imshow(str(k) , face_section)
     	k += 1
 
 
     	#draw a rectangle in the original image
     	#????????????????????
-    	cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 2)#????????
+    	cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 2)
 
-    #????????????????????
+    
     cv2.imshow("Faces" , frame)#displays what is captured by camera
 
     if cv2.waitKey(1) & 0xFF == ord('q'):#bitwise and hexadecimal ff ##this statement is necessary for 64bit machine
